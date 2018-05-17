@@ -1622,6 +1622,8 @@ public class WeekView extends View {
     public DateTimeInterpreter getDateTimeInterpreter() {
         if (mDateTimeInterpreter == null) {
             mDateTimeInterpreter = new DateTimeInterpreter() {
+                final String[] weekLabels = {"L", "M", "X", "J", "V", "S", "D"};
+
                 @Override
                 public String interpretDate(Calendar date) {
                     try {
@@ -1632,6 +1634,25 @@ public class WeekView extends View {
                         return "";
                     }
                 }
+
+                @Override
+                public String interpretTime(int hour) {
+                    String amPm;
+                    if (hour >= 0 && hour < 12) amPm = "AM";
+                    else amPm = "PM";
+                    if (hour == 0) hour = 12;
+                    if (hour > 12) hour -= 12;
+                    return String.format("%02d %s", hour, amPm);
+                }
+
+                @Override
+                public String interpretWeek(int dayofweek) {
+                    if (dayofweek > 7 || dayofweek < 1) {
+                        return null;
+                    }
+                    return weekLabels[dayofweek - 1];
+                }
+
 
                 @Override
                 public String interpretTime(int hour, int minutes) {
@@ -1660,6 +1681,8 @@ public class WeekView extends View {
         }
         return mDateTimeInterpreter;
     }
+
+
 
     /**
      * Set the interpreter which provides the text to show in the header column and the header row.
@@ -2775,6 +2798,7 @@ public class WeekView extends View {
          * @param oldFirstVisibleDay The old first visible day (is null on the first call).
          */
         void onFirstVisibleDayChanged(Calendar newFirstVisibleDay, Calendar oldFirstVisibleDay);
+        void onSelectedDaeChange(Calendar selectedDate);
     }
 
     public interface AddEventClickListener {

@@ -66,4 +66,33 @@
         <attr name="zoomFocusPointEnabled" format="boolean" />
         <attr name="dropListenerEnabled" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="WeekHeaderView">
+        <attr name="firstDayOfWeek2" format="enum">
+            <enum name="sunday" value="1" />
+            <enum name="monday" value="2" />
+            <enum name="tuesday" value="3" />
+            <enum name="wednesday" value="4" />
+            <enum name="thursday" value="5" />
+            <enum name="friday" value="6" />
+            <enum name="saturday" value="7" />
+        </attr>
+        <attr name="headerWeekLabelTextSize" format="dimension" />
+        <attr name="headerDayLabelTextSize" format="dimension" />
+        <attr name="headerWeekLabelTextColor" format="color" />
+        <attr name="headerDayLabelNormalTextColor" format="color" />
+        <attr name="headerDayLabelTodayTextColor" format="color" />
+        <attr name="headerBackgroundColor" format="color"/>
+        <attr name="headerColumnGap" format="dimension" />
+        <attr name="headerRowGap" format="dimension" />
+        <attr name="headerPaddingLeft" format="dimension" />
+        <attr name="headerPaddingRight" format="dimension" />
+        <attr name="headerPaddingTop" format="dimension" />
+        <attr name="headerPaddingBottom" format="dimension" />
+        <attr name="headerFocusTextColor" format="color"/>
+        <attr name="headerFocusBackgroundColor" format="color"/>
+        <attr name="headerFocusSameDayBackgroundColor" format="color"/>
+        <attr name="headerFocusSameDayTextColor" format="color"/>
+    </declare-styleable>
+
 </resources>

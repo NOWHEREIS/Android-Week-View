@@ -183,6 +183,8 @@ public abstract class BaseActivity extends AppCompatActivity implements WeekView
      */
     private void setupDateTimeInterpreter(final boolean shortDate) {
         mWeekView.setDateTimeInterpreter(new DateTimeInterpreter() {
+            final String[] weekLabels = {"L", "M", "X", "J", "V", "S", "D"};
+
             @Override
             public String interpretDate(Calendar date) {
                 SimpleDateFormat weekdayNameFormat = new SimpleDateFormat("EEE", Locale.getDefault());
@@ -196,6 +198,21 @@ public abstract class BaseActivity extends AppCompatActivity implements WeekView
                     weekday = String.valueOf(weekday.charAt(0));
                 return weekday.toUpperCase() + format.format(date.getTime());
             }
+
+            @Override
+            public String interpretTime(int hour) {
+                return String.format("%02d:00", hour);
+
+            }
+
+            @Override
+            public String interpretWeek(int dayofweek) {
+                if (dayofweek > 7 || dayofweek < 1) {
+                    return null;
+                }
+                return weekLabels[dayofweek - 1];
+            }
+
 
             @Override
             public String interpretTime(int hour, int minutes) {
