@@ -17,19 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BasicActivity"
-            android:label="@string/title_activity_basic"></activity>
-        <activity
-            android:name=".AsynchronousActivity"
-            android:label="@string/title_activity_asynchronous"></activity>
-        <activity android:name=".MainActivity2"
-            android:label="@string/TabCalendar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
