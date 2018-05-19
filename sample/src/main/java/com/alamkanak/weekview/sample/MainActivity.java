@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import com.alamkanak.weekview.DateTimeInterpreter;
 import com.alamkanak.weekview.MonthLoader;
+import com.alamkanak.weekview.WeekDayView;
 import com.alamkanak.weekview.WeekHeaderView;
-import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 
 import java.text.SimpleDateFormat;
@@ -30,9 +30,9 @@ import java.util.Locale;
  *
  */
 public class MainActivity extends Activity implements
-        WeekView.EventClickListener, WeekView.EventLongPressListener,WeekView.EmptyViewClickListener,WeekView.EmptyViewLongPressListener,WeekView.ScrollListener, MonthLoader.MonthChangeListener {
+        WeekDayView.EventClickListener, WeekDayView.EventLongPressListener,WeekDayView.EmptyViewClickListener,WeekDayView.EmptyViewLongPressListener,WeekDayView.ScrollListener, WeekDayView.MonthChangeListener {
     //view
-    private WeekView mWeekView;
+    private WeekDayView mWeekView;
     private WeekHeaderView mWeekHeaderView;
     private TextView mTv_date;
 
@@ -46,7 +46,7 @@ public class MainActivity extends Activity implements
     }
 
     private void assignViews() {
-        mWeekView = (WeekView) findViewById(R.id.weekView);
+        mWeekView = (WeekDayView) findViewById(R.id.weekView);
         mWeekHeaderView= (WeekHeaderView) findViewById(R.id.weekheaderview);
         mTv_date =(TextView)findViewById(R.id.tv_date);
         //init WeekView

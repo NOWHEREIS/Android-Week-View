@@ -498,7 +498,7 @@ public class WeekDayView extends View {
                 float top = (mHourHeight * 24 / 1440) * (60 * now.get(Calendar.HOUR_OF_DAY) + now.get(Calendar.MINUTE)) + mTimeTextHeight + mCurrentOrigin.y;
                 Log.d(TAG, "drawTimeColumnAndAxes ===" + time);
 //                canvas.drawText(time, mTimeTextWidth + mHeaderColumnPadding, top, mCurrentTimeTextPaint);
-                canvas.drawLine(startPixel, top, startPixel + mWidthPerDay, top, mCurrentTimeTextPaint);
+                //canvas.drawLine(startPixel, top, startPixel + mWidthPerDay, top, mCurrentTimeTextPaint);
             }
 
 
